@@ -16,6 +16,6 @@ ETL em Java:
 - AWS EC2
 
 ## 📖 Documentação
-Mais detalhes sobre endpoints e arquitetura estão na [documentação principal](../) disponivél nas pasta do one drive.
+Mais detalhes sobre endpoints e arquitetura estão na [documentação principal](../) disponível nas pasta do one drive.
 
 ---
