@@ -1,0 +1,335 @@
+[17/10/2025 15:22:12] Monitoramento de rede iniciado...
+[17/10/2025 15:22:12] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:22:12] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:22:17] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:22:17] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:22:22] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:22:22] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:22:27] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:22:27] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:22:48] Monitoramento de rede iniciado...
+[17/10/2025 15:22:48] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:22:48] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:22:53] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:22:53] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:22:58] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:22:58] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:23:03] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:23:03] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:23:08] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:23:08] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:23:13] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:23:13] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:23:18] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:23:18] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:23:23] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:23:23] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:23:28] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:23:28] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:23:33] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:23:33] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:23:38] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:23:38] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:23:43] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:23:43] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 15:23:48] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 15:23:48] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 894,00 MB
+Bytes Enviados: 93,00 MB
+---------------------------
+
+[17/10/2025 16:50:32] Monitoramento de rede iniciado...
+[17/10/2025 16:50:32] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 16:50:32] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 918,00 MB
+Bytes Enviados: 98,00 MB
+---------------------------
+
+[17/10/2025 16:50:37] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 16:50:37] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 918,00 MB
+Bytes Enviados: 98,00 MB
+---------------------------
+
+[17/10/2025 16:50:42] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 16:50:42] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 918,00 MB
+Bytes Enviados: 98,00 MB
+---------------------------
+
+[17/10/2025 17:11:05] Monitoramento de rede iniciado...
+[17/10/2025 17:11:05] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 17:11:05] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 934,00 MB
+Bytes Enviados: 101,00 MB
+---------------------------
+
+[17/10/2025 17:11:10] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 17:11:10] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 934,00 MB
+Bytes Enviados: 101,00 MB
+---------------------------
+
+[17/10/2025 17:11:15] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 17:11:15] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 934,00 MB
+Bytes Enviados: 101,00 MB
+---------------------------
+
+[17/10/2025 17:11:20] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 17:11:20] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 934,00 MB
+Bytes Enviados: 101,00 MB
+---------------------------
+
+[17/10/2025 17:15:11] Monitoramento de rede iniciado...
+[17/10/2025 17:15:11] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 17:15:11] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 937,00 MB
+Bytes Enviados: 101,00 MB
+---------------------------
+
+[17/10/2025 17:15:17] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 17:15:17] Interface: wlo1
+IP: [192.168.1.68]
+Bytes Recebidos: 937,00 MB
+Bytes Enviados: 102,00 MB
+---------------------------
+
+[17/10/2025 17:46:37] Monitoramento de rede iniciado...
+[17/10/2025 17:46:42] Erro ao salvar registro no banco: No suitable driver found for jdbc:mysql://localhost:3306/bdOberon
+[17/10/2025 17:46:42] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,01 %
+---------------------------
+
+[17/10/2025 17:48:05] Monitoramento de rede iniciado...
+[17/10/2025 17:48:11] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:48:11] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 2,80 %
+---------------------------
+
+[17/10/2025 17:48:16] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:48:16] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,05 %
+---------------------------
+
+[17/10/2025 17:48:21] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:48:21] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 1,09 %
+---------------------------
+
+[17/10/2025 17:48:26] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:48:26] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 1,66 %
+---------------------------
+
+[17/10/2025 17:48:31] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:48:31] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,79 %
+---------------------------
+
+[17/10/2025 17:48:36] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:48:36] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,53 %
+---------------------------
+
+[17/10/2025 17:48:41] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:48:41] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,48 %
+---------------------------
+
+[17/10/2025 17:48:46] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:48:46] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,02 %
+---------------------------
+
+[17/10/2025 17:48:51] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:48:51] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,04 %
+---------------------------
+
+[17/10/2025 17:48:56] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:48:56] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,01 %
+---------------------------
+
+[17/10/2025 17:49:02] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:49:02] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,01 %
+---------------------------
+
+[17/10/2025 17:49:07] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:49:07] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,02 %
+---------------------------
+
+[17/10/2025 17:49:12] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:49:12] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,01 %
+---------------------------
+
+[17/10/2025 17:49:17] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:49:17] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,20 %
+---------------------------
+
+[17/10/2025 17:49:22] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:49:22] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,01 %
+---------------------------
+
+[17/10/2025 17:50:23] Monitoramento de rede iniciado...
+[17/10/2025 17:50:28] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:50:28] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 1,58 %
+---------------------------
+
+[17/10/2025 17:50:33] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:50:33] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,28 %
+---------------------------
+
+[17/10/2025 17:50:39] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:50:39] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,87 %
+---------------------------
+
+[17/10/2025 17:50:44] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:50:44] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,69 %
+---------------------------
+
+[17/10/2025 17:50:49] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:50:49] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,92 %
+---------------------------
+
+[17/10/2025 17:50:54] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 17:50:54] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 1,02 %
+---------------------------
+
+[17/10/2025 18:04:30] Monitoramento de rede iniciado...
+[17/10/2025 18:04:35] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 18:04:35] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 1,02 %
+---------------------------
+
+[17/10/2025 18:04:40] [Banco] Registro de uso de rede salvo com sucesso!
+[17/10/2025 18:04:40] Interface: wlo1
+IP: [192.168.1.68]
+Uso de Rede: 0,96 %
+---------------------------
+
