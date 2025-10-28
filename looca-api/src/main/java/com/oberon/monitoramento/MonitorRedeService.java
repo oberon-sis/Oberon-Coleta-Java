@@ -34,7 +34,7 @@ public class MonitorRedeService {
                     long deltaEnviados = bytesEnviados - anteriores[1];
 
                     // Taxa total em Mbps considerando 5s de intervalo
-                    double taxaMbps = ((deltaRecebidos + deltaEnviados) * 8.0) / (5 * 1_000_000.0);
+                    double taxaMbps = ((deltaRecebidos + deltaEnviados) * 8.0) / (1 * 1_000_000.0);
                     double usoPercentual = (taxaMbps / (velocidadeBits / 1_000_000.0)) * 100.0;
 
                     if (usoPercentual < 0) usoPercentual = 0;
