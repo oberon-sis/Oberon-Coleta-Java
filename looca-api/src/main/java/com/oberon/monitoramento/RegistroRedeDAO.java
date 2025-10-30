@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class RegistroRedeDAO {
 
     public void salvar(RegistroRede registro) {
-        String sql = "INSERT INTO Registro (valor, Componente) VALUES (?, ?)";
+        String sql = "INSERT INTO Registro (valor, fkComponente) VALUES (?, ?)";
 
         try (Connection conexao = Conexao.conectar();
              PreparedStatement stmt = conexao.prepareStatement(sql)) {
