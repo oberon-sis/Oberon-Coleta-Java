@@ -7,16 +7,13 @@ import java.sql.SQLException;
 public class RegistroRedeDAO {
 
     public void salvar(RegistroRede registro) {
-        String sql = "INSERT INTO Registro (valor, horario, fkMaquinaComponente) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO Registro (valor, Componente) VALUES (?, ?)";
 
         try (Connection conexao = Conexao.conectar();
              PreparedStatement stmt = conexao.prepareStatement(sql)) {
 
             stmt.setDouble(1, registro.getUsoRedePorcentagem());
-            stmt.setTimestamp(2, java.sql.Timestamp.valueOf(registro.getDataHora()));
-
-            // ⚙️ Ajuste o ID da interface de rede correspondente no banco
-            stmt.setInt(3, 4);
+            stmt.setInt(2, 4);
 
             stmt.executeUpdate();
 
