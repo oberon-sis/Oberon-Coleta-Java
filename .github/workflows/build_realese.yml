@@ -31,9 +31,8 @@ jobs:
 
       - name: Build do Projeto com Maven
         run: mvn clean package -f ${{ env.MAVEN_PROJECT_DIR }}/pom.xml
-
       - name: Criar JRE customizado (jlink)
-        run: jlink --output jre_min --add-modules java.base,java.sql,java.desktop
+        run: jlink --output jre_min --add-modules java.base,java.sql,java.desktop,java.logging,java.management
 
       - name: Localizar JAR e Configurar Caminhos
         id: paths
