@@ -33,8 +33,7 @@ jobs:
         run: mvn clean package -f ${{ env.MAVEN_PROJECT_DIR }}/pom.xml
 
       - name: Criar JRE customizado (jlink)
-        run: |
-          jlink --output jre_min --add-modules java.base,java.sql,java.desktop
+        run: jlink --output jre_min --add-modules java.base,java.sql,java.desktop
 
       - name: Localizar JAR e Configurar Caminhos
         id: paths
@@ -79,31 +78,51 @@ jobs:
             --type $PACKAGE_TYPE \
             --verbose
 
-      - name: Preparar Arquivos para ZIP e Upload
-        id: prepare_zip
+      - name: Preparar Variáveis de Nome de ZIP
+        id: prepare_vars
         shell: bash
         run: |
-          VERSION=${GITHUB_REF_NAME##*/}
+          VERSION="${{ github.ref_name }}"
           BASE_NAME="${{ env.EXECUTABLE_BASE_NAME }}"
-          DIST_PATH="${{ steps.paths.outputs.DIST_PATH }}"
-
+          
           if [[ "$RUNNER_OS" == "Windows" ]]; then
             OS_SUFFIX="Windows"
-            zip -j "$BASE_NAME-$VERSION-$OS_SUFFIX.zip" "$DIST_PATH/$BASE_NAME.exe"
           else
             OS_SUFFIX="Linux"
-            zip -r "$BASE_NAME-$VERSION-$OS_SUFFIX.zip" "$DIST_PATH/$BASE_NAME"
           fi
           
           ZIP_NAME="${BASE_NAME}-${VERSION}-${OS_SUFFIX}.zip"
+          
           echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
           echo "zip_path_output=$ZIP_NAME" >> $GITHUB_OUTPUT
+          
+      - name: Criar ZIP (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh 
+        run: |
+          $BaseName = $env:EXECUTABLE_BASE_NAME
+          $DistPath = "dist"
+          $ExePath = Join-Path $DistPath "$BaseName.exe"
+          $DestPath = $env:ZIP_NAME
+
+          # Compacta o executável
+          Compress-Archive -Path $ExePath -DestinationPath $DestPath
+          
+      - name: Criar ZIP (Linux)
+        if: runner.os == 'Linux'
+        shell: bash 
+        run: |
+          BASE_NAME="${{ env.EXECUTABLE_BASE_NAME }}"
+          DIST_PATH="dist"
+          
+          # Compacta a pasta completa gerada pelo jpackage no Linux
+          zip -r "${{ env.ZIP_NAME }}" "$DIST_PATH/$BASE_NAME"
 
       - name: Upload do ZIP como artefato
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.ZIP_NAME }}
-          path: ${{ steps.prepare_zip.outputs.zip_path_output }}
+          path: ${{ env.ZIP_NAME }}
 
   release:
     runs-on: ubuntu-latest
@@ -113,7 +132,6 @@ jobs:
 
     steps:
       - name: Criar Release
-        if: startsWith(github.ref, 'refs/tags/v')
         id: create_release
         uses: actions/create-release@v1
         env:
