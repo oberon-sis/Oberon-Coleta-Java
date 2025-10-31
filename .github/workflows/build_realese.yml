@@ -70,7 +70,6 @@ jobs:
             --main-jar app.jar \
             --main-class ${{ env.MAIN_CLASS }} \
             --runtime-image jre_min \
-            --win-console \
             --type $PACKAGE_TYPE \
             --verbose
 
