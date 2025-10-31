@@ -71,7 +71,7 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
-                    <finalName>app</finalName> 
+                    <finalName>looca-api </finalName> 
                     <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
                 <executions>
