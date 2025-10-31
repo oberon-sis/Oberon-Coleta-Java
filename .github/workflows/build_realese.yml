@@ -61,8 +61,7 @@ jobs:
         run: |
           APP_VERSION_STRIPPED="${{ github.ref_name }}"
           
-          PACKAGE_TYPE="app-image" 
-          
+          PACKAGE_TYPE="app-image"
           jpackage \
             --name ${{ env.EXECUTABLE_BASE_NAME }} \
             --app-version $APP_VERSION_STRIPPED \
@@ -71,6 +70,7 @@ jobs:
             --main-jar app.jar \
             --main-class ${{ env.MAIN_CLASS }} \
             --runtime-image jre_min \
+            --win-console \
             --type $PACKAGE_TYPE \
             --verbose
 
