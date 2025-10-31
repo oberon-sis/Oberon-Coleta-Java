@@ -3,7 +3,7 @@ name: Build e Empacotamento Nativo do Agente Java
 on:
   push:
     tags:
-      - 'v*.*.*' # Exemplo: v1.0.0 
+      - '*.*.*' # Exemplo: 1.0.0 
 
 jobs:
   build:
