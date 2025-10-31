@@ -46,7 +46,6 @@ jobs:
           fi
           
           mkdir -p dist/package
-          
           cp "$JAR_PATH" dist/package/app.jar
           
           if [[ "$RUNNER_OS" == "Windows" ]]; then
@@ -61,15 +60,13 @@ jobs:
       - name: Criar Pacote Nativo (EXE para Windows / Executável para Linux)
         shell: bash 
         run: |
-          if [ "${{ runner.os }}" == "Windows" ]; then
-              PACKAGE_TYPE="exe"
-          else
-              PACKAGE_TYPE="app-image" 
-          fi
+          APP_VERSION_STRIPPED="${{ github.ref_name }}"
+          
+          PACKAGE_TYPE="app-image" 
           
           jpackage \
             --name ${{ env.EXECUTABLE_BASE_NAME }} \
-            --app-version ${{ github.ref_name }} \
+            --app-version $APP_VERSION_STRIPPED \
             --input dist/package \
             --dest dist \
             --main-jar app.jar \
@@ -98,16 +95,11 @@ jobs:
           
       - name: Criar ZIP (Windows)
         if: runner.os == 'Windows'
-        shell: pwsh 
+        shell: bash 
         run: |
-          $BaseName = $env:EXECUTABLE_BASE_NAME
-          $DistPath = "dist"
-          $ExePath = Join-Path $DistPath "$BaseName.exe"
-          $DestPath = $env:ZIP_NAME
+          BASE_NAME="${{ env.EXECUTABLE_BASE_NAME }}"
+          "/c/Program Files/7-Zip/7z.exe" a -tzip "${{ env.ZIP_NAME }}" "dist/$BASE_NAME"
 
-          # Compacta o executável
-          Compress-Archive -Path $ExePath -DestinationPath $DestPath
-          
       - name: Criar ZIP (Linux)
         if: runner.os == 'Linux'
         shell: bash 
@@ -115,7 +107,6 @@ jobs:
           BASE_NAME="${{ env.EXECUTABLE_BASE_NAME }}"
           DIST_PATH="dist"
           
-          # Compacta a pasta completa gerada pelo jpackage no Linux
           zip -r "${{ env.ZIP_NAME }}" "$DIST_PATH/$BASE_NAME"
 
       - name: Upload do ZIP como artefato
@@ -164,7 +155,6 @@ jobs:
           do
             ABSOLUTE_PATH="$PWD/$FILE"
             ASSET_NAME=$(basename "$FILE")
-            echo "Enviando asset: $ASSET_NAME"
             
             FINAL_URL="${RELEASE_UPLOAD_URL_CLEANED}?name=$ASSET_NAME"
             
