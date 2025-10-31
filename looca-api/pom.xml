@@ -37,7 +37,7 @@
 
     <build>
         <plugins>
-            <!-- Compilador padrão -->
+            <!-- Plugin de Compilador -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -48,20 +48,31 @@
                 </configuration>
             </plugin>
 
-            <!-- Plugin para criar JAR com dependências -->
+            <!-- Plugin JAR: Define a Main Class no Manifest -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>3.6.0</version>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
                 <configuration>
                     <archive>
                         <manifest>
+                            <addClasspath>true</addClasspath>
                             <mainClass>com.oberon.monitoramento.Main</mainClass>
                         </manifest>
                     </archive>
+                    <finalName>base</finalName> 
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.7.1</version>
+                <configuration>
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <finalName>app</finalName> 
+                    <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
                 <executions>
                     <execution>
