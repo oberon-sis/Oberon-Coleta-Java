@@ -34,8 +34,7 @@ jobs:
 
       - name: Criar JRE customizado (jlink)
         run: |
-          # Cria um ambiente de execução mínimo (runtime) para a aplicação
-          jlink --output jre_min --add-modules java.base,java.sql,java.xml.bind,java.desktop
+          jlink --output jre_min --add-modules java.base,java.sql,java.desktop
 
       - name: Localizar JAR e Configurar Caminhos
         id: paths
@@ -85,7 +84,7 @@ jobs:
 
           if [[ "$RUNNER_OS" == "Windows" ]]; then
             OS_SUFFIX="Windows"
-            zip -j "$BASE_NAME-$VERSION-$OS_SUFFIX.zip" "$DIST_PATH/$BASE_NAME.exe" 
+            zip -j "$BASE_NAME-$VERSION-$OS_SUFFIX.zip" "$DIST_PATH/$BASE_NAME.exe"
           else
             OS_SUFFIX="Linux"
             zip -r "$BASE_NAME-$VERSION-$OS_SUFFIX.zip" "$DIST_PATH/$BASE_NAME"
