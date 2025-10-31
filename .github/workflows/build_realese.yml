@@ -1,0 +1,155 @@
+name: Build e Empacotamento Nativo do Agente Java
+
+on:
+  push:
+    tags:
+      - 'v*.*.*' # Exemplo: v1.0.0 
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+
+    env:
+      MAVEN_PROJECT_DIR: looca-api
+      EXECUTABLE_BASE_NAME: OberonAgenteJava
+      MAIN_CLASS: com.oberon.monitoramento.Main
+      JAR_NAME: Oberon-Coleta 
+      
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java Amazon Corretto 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: '21'
+          cache: 'maven'
+
+      - name: Build do Projeto com Maven
+        run: mvn clean package -f ${{ env.MAVEN_PROJECT_DIR }}/pom.xml
+
+      - name: Criar JRE customizado (jlink)
+        run: |
+          # Cria um ambiente de execução mínimo (runtime) para a aplicação
+          jlink --output jre_min --add-modules java.base,java.sql,java.xml.bind,java.desktop
+
+      - name: Localizar JAR e Configurar Caminhos
+        id: paths
+        shell: bash
+        run: |
+          JAR_PATH=$(find ${{ env.MAVEN_PROJECT_DIR }}/target -name "${{ env.JAR_NAME }}*.jar" -print -quit)
+          
+          mkdir -p dist/package
+          
+          cp $JAR_PATH dist/package/app.jar
+          
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+              INSTALLER_NAME="${{ env.EXECUTABLE_BASE_NAME }}.exe"
+          else
+              INSTALLER_NAME="${{ env.EXECUTABLE_BASE_NAME }}"
+          fi
+          
+          echo "INSTALLER_NAME=$INSTALLER_NAME" >> $GITHUB_ENV
+          echo "DIST_PATH=dist" >> $GITHUB_OUTPUT
+
+      - name: Criar Pacote Nativo (EXE para Windows / Executável para Linux)
+        run: |
+          if [ "${{ runner.os }}" == "Windows" ]; then
+              PACKAGE_TYPE="exe"
+          else
+              PACKAGE_TYPE="app-image" 
+          fi
+          
+          jpackage \
+            --name ${{ env.EXECUTABLE_BASE_NAME }} \
+            --app-version ${{ github.ref_name }} \
+            --input dist/package \
+            --dest dist \
+            --main-jar app.jar \
+            --main-class ${{ env.MAIN_CLASS }} \
+            --runtime-image jre_min \
+            --type $PACKAGE_TYPE \
+            --verbose
+
+      - name: Preparar Arquivos para ZIP e Upload
+        id: prepare_zip
+        shell: bash
+        run: |
+          VERSION=${GITHUB_REF_NAME##*/}
+          BASE_NAME="${{ env.EXECUTABLE_BASE_NAME }}"
+          DIST_PATH="${{ steps.paths.outputs.DIST_PATH }}"
+
+          if [[ "$RUNNER_OS" == "Windows" ]]; then
+            OS_SUFFIX="Windows"
+            zip -j "$BASE_NAME-$VERSION-$OS_SUFFIX.zip" "$DIST_PATH/$BASE_NAME.exe" 
+          else
+            OS_SUFFIX="Linux"
+            zip -r "$BASE_NAME-$VERSION-$OS_SUFFIX.zip" "$DIST_PATH/$BASE_NAME"
+          fi
+          
+          ZIP_NAME="${BASE_NAME}-${VERSION}-${OS_SUFFIX}.zip"
+          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
+          echo "zip_path_output=$ZIP_NAME" >> $GITHUB_OUTPUT
+
+      - name: Upload do ZIP como artefato
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ZIP_NAME }}
+          path: ${{ steps.prepare_zip.outputs.zip_path_output }}
+
+  release:
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: write # Permissão necessária para criar a Release
+
+    steps:
+      - name: Criar Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Usa o Token para autenticação
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          
+      - name: Baixar todos os artefatos
+        uses: actions/download-artifact@v4
+        with:
+          path: ./assets
+          pattern: '*'
+          merge-multiple: true 
+          
+      - name: Enviar assets à Release
+        run: |
+          set -e
+          
+          RELEASE_UPLOAD_URL_CLEANED=$(echo "${{ steps.create_release.outputs.upload_url }}" | sed 's/{?name,label}//')
+          
+          if [ $(find ./assets -name "*.zip" | wc -l) -eq 0 ]; then
+            echo "Aviso: Nenhum arquivo .zip encontrado para upload."
+            exit 0
+          fi
+          
+          find ./assets -name "*.zip" -print0 | while IFS= read -r -d $'\0' FILE
+          do
+            ABSOLUTE_PATH="$PWD/$FILE"
+            ASSET_NAME=$(basename "$FILE")
+            echo "Enviando asset: $ASSET_NAME"
+            
+            FINAL_URL="${RELEASE_UPLOAD_URL_CLEANED}?name=$ASSET_NAME"
+            
+            curl -sSL \
+              -X POST \
+              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Content-Type: application/octet-stream" \
+              --data-binary "@$ABSOLUTE_PATH" \
+              "$FINAL_URL"
+          done
